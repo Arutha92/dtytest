@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+       #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
+  </head>
+  <body>
+    <h3>HOME</h3>
+  
+    <form>
+      Code postal / Département:<br>
+       <input type="text" name="departement"><br>
+    </form>
+    <div id="map"></div>
+    <br>
+    <script>
+      function initMap() {
+        var departement = {lat: -25.363, lng: 131.044};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 6,
+          center: departement
+        });
+        var marker = new google.maps.Marker({
+          position: departement,
+          map: map
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBY-QqCTutgnr_nATa7clo8L4_mqRUYCec&callback=initMap"
+    async defer></script>
+  </body>
+</html>
+
+
